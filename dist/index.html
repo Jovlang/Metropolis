@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11100f" />
+    <meta name="description" content="A focused, browser-based metronome." />
+    <title>Metropolis — Metronome</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2311100f'/%3E%3Cpath d='M20 49 29 14h6l9 35H20Z' fill='%23f0ede6'/%3E%3Ccircle cx='32' cy='37' r='5' fill='%23ff5c35'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <a class="wordmark" href="/" aria-label="Metropolis home">METROPOLIS</a>
+        <div class="status" aria-live="polite"><span class="status-dot"></span><span id="statusText">Ready</span></div>
+      </header>
+
+      <section class="instrument" aria-labelledby="metronomeTitle">
+        <h1 id="metronomeTitle" class="sr-only">Metronome</h1>
+
+        <div class="tempo-readout" aria-live="polite">
+          <output id="bpmOutput" for="bpm">120</output>
+          <span>BPM</span>
+        </div>
+
+        <div class="pulse-track" id="pulseTrack" aria-hidden="true">
+          <span class="pulse-line"></span>
+          <span class="pulse-head"></span>
+        </div>
+
+        <div class="slider-block">
+          <div class="range-labels"><span>40</span><span>Tempo</span><span>240</span></div>
+          <input id="bpm" type="range" min="40" max="240" value="120" step="1" aria-label="Tempo in beats per minute" />
+        </div>
+
+        <fieldset class="meter-control">
+          <legend>Time signature</legend>
+          <div class="meter-buttons" role="radiogroup" aria-label="Time signature">
+            <button type="button" class="meter-button" data-beats="2" role="radio" aria-checked="false">2/4</button>
+            <button type="button" class="meter-button" data-beats="3" role="radio" aria-checked="false">3/4</button>
+            <button type="button" class="meter-button active" data-beats="4" role="radio" aria-checked="true">4/4</button>
+            <button type="button" class="meter-button" data-beats="6" role="radio" aria-checked="false">6/8</button>
+          </div>
+        </fieldset>
+
+        <div class="beat-row" id="beatRow" aria-label="Beat 1 of 4"></div>
+
+        <button id="transport" class="transport" type="button" aria-pressed="false">
+          <span class="transport-icon" aria-hidden="true"></span>
+          <span id="transportLabel">Start</span>
+          <kbd>Space</kbd>
+        </button>
+      </section>
+
+      <footer>
+        <span>Browser audio</span>
+        <span class="footer-rule"></span>
+        <span>v0.1</span>
+      </footer>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
