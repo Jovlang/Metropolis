@@ -8,6 +8,7 @@ Metropolis uses the Web Audio clock and a short look-ahead scheduler to keep aud
 
 - Tempo control from 40 to 240 BPM
 - 2/4, 3/4, 4/4, and 6/8 time signatures
+- Eighth-note, triplet, and sixteenth-note subdivisions with quieter secondary clicks
 - Accented downbeats
 - Start and stop from the transport button or Space key
 - Audio-synchronized beat indicators
@@ -67,4 +68,4 @@ Before submitting a change, test playback, live BPM changes, every time signatur
 
 ## Status
 
-This is an early functional version. Likely next steps include volume control, selectable click sounds, tap tempo, subdivisions, presets, and offline installation.
+This is an early functional version. Likely next steps include volume control, selectable click sounds, tap tempo, presets, and offline installation.

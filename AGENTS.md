@@ -32,6 +32,7 @@ Then open `http://127.0.0.1:4173/`.
 - Create or resume the `AudioContext` from a user-initiated action so browser autoplay policies are respected.
 - Schedule visual state from the audio clock, and clear pending visual timers when playback stops or the meter changes.
 - A meter change must reset the beat index and keep the visible beat count and accessible label in sync.
+- A subdivision change must reset the pulse index. Primary beats, subdivisions, and downbeats must remain audibly distinct.
 - The downbeat must remain distinguishable both audibly and visually.
 - Keep the visible interface and the `set_metronome` WebMCP tool on the same state and action paths. Validate WebMCP input before mutating state.
 
@@ -58,9 +59,10 @@ Before finishing a UI or audio change, verify:
 2. Start and stop work by button and Space key.
 3. BPM changes take effect while playing.
 4. Every time-signature button updates the beat indicators and accented downbeat.
-5. Repeated start/stop and meter changes do not leave stale visual timers.
-6. The layout has no horizontal overflow at narrow widths.
-7. WebMCP valid input updates the visible interface, while invalid input fails without corrupting state.
+5. Eighth, triplet, and sixteenth subdivisions stay in tempo and use quieter clicks than primary beats.
+6. Repeated start/stop, meter, and subdivision changes do not leave stale visual timers.
+7. The layout has no horizontal overflow at narrow widths.
+8. WebMCP valid input updates the visible interface, while invalid input fails without corrupting state.
 
 ## Change discipline
 

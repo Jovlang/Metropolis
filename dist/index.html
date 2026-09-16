@@ -34,15 +34,27 @@
           <input id="bpm" type="range" min="40" max="240" value="120" step="1" aria-label="Tempo in beats per minute" />
         </div>
 
-        <fieldset class="meter-control">
-          <legend>Time signature</legend>
-          <div class="meter-buttons" role="radiogroup" aria-label="Time signature">
-            <button type="button" class="meter-button" data-beats="2" role="radio" aria-checked="false">2/4</button>
-            <button type="button" class="meter-button" data-beats="3" role="radio" aria-checked="false">3/4</button>
-            <button type="button" class="meter-button active" data-beats="4" role="radio" aria-checked="true">4/4</button>
-            <button type="button" class="meter-button" data-beats="6" role="radio" aria-checked="false">6/8</button>
-          </div>
-        </fieldset>
+        <div class="control-grid">
+          <fieldset class="segmented-control meter-control">
+            <legend>Time signature</legend>
+            <div class="segmented-buttons meter-buttons" role="radiogroup" aria-label="Time signature">
+              <button type="button" class="segment-button meter-button" data-beats="2" role="radio" aria-checked="false">2/4</button>
+              <button type="button" class="segment-button meter-button" data-beats="3" role="radio" aria-checked="false">3/4</button>
+              <button type="button" class="segment-button meter-button active" data-beats="4" role="radio" aria-checked="true">4/4</button>
+              <button type="button" class="segment-button meter-button" data-beats="6" role="radio" aria-checked="false">6/8</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="segmented-control subdivision-control">
+            <legend>Subdivision</legend>
+            <div class="segmented-buttons subdivision-buttons" role="radiogroup" aria-label="Subdivision">
+              <button type="button" class="segment-button subdivision-button active" data-subdivision="1" data-name="quarter" role="radio" aria-checked="true">Off</button>
+              <button type="button" class="segment-button subdivision-button" data-subdivision="2" data-name="eighth" role="radio" aria-checked="false">8ths</button>
+              <button type="button" class="segment-button subdivision-button" data-subdivision="3" data-name="triplet" role="radio" aria-checked="false">Triplets</button>
+              <button type="button" class="segment-button subdivision-button" data-subdivision="4" data-name="sixteenth" role="radio" aria-checked="false">16ths</button>
+            </div>
+          </fieldset>
+        </div>
 
         <div class="beat-row" id="beatRow" aria-label="Beat 1 of 4"></div>
 
